@@ -34,3 +34,7 @@ RollSomeDie D {eight|Sides}
 RollSomeDie D {ten|Sides}
 RollSomeDie D {twelve|Sides}
 RollSomeDie D {twenty|Sides}
+RoleDefaultDie roll a die
+RoleDefaultDie roll die
+RoleDefaultDie roll some die
+RoleDefaultDie roll

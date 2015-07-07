@@ -8,6 +8,9 @@
           "type": "NUMBER"
         }
       ]
+    },
+    {
+      "intent": "RoleDefaultDie"
     }
   ]
 }

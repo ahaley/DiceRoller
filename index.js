@@ -76,8 +76,10 @@ function onIntent(intentRequest, session, callback) {
         intentName = intentRequest.intent.name;
 
     // Dispatch to your skill's intent handlers
-    if ("RollSomeDie" == intentName) {
-        rollSomeDie(intent, session, callback);  
+    if ("RollSomeDie" === intentName) {
+        rollSomeDie(intent, session, callback);
+	} else if ("RoleDefaultDie" === intentName) {
+		rollDefaultDie(intent, session, callback);		
     } else if ("HelpIntent" === intentName) {
         getWelcomeResponse(callback);
     } else {
@@ -112,6 +114,12 @@ function getWelcomeResponse(callback) {
              buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
 
+function roll(sides) {
+	if (sides >= 0 && sides <= 20)
+        return Math.floor(Math.random() * sides) + 1;
+	return -1;
+}
+
 function rollSomeDie(intent, session, callback) {
     var cardTitle = intent.name;
     var sidesName = intent.slots.Sides.value;
@@ -122,21 +130,30 @@ function rollSomeDie(intent, session, callback) {
     
     repromptText = "Did you want me to roll the die?";
     
-    var sides = -1;
-    for (var i = 0; i <= 20; i++) {
-        if (nameOfNumbers[i] == sidesName)
-          sides = i;
-    }
-    
-    if (sides !== -1) {
-        var n = Math.floor(Math.random() * sides) + 1;
-        var name = nameOfNumbers[n];
-
-        speechOutput = ["Your d", sidesName, "rolled a", name].join(" ");
+	var sides = parseInt(sidesName);
+	
+    var n = roll(sides);
+	if (n !== -1) {
+        speechOutput = ["Your d", sidesName, "rolled a", n].join(" ");
     }
     else {
-        speechOutput = ["Forgive me, I don't own a ", sidesName, "sided die."].join(" ");
+        speechOutput = ["I don't own a ", sidesName, "sided die."].join(" ");
     }
+    callback(sessionAttributes,
+             buildRollResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+}
+
+function rollDefaultDie(intent, session, callback) {
+    var cardTitle = intent.name;
+    var sessionAttributes = {};
+    var shouldEndSession = true;
+    var speechOutput = "";
+    var repromptText = "";
+    
+    repromptText = "Did you want me to roll the die?";
+    
+    var n = roll(20);
+    speechOutput = ["Your d 20 rolled a", n].join(" ");
     callback(sessionAttributes,
              buildRollResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
