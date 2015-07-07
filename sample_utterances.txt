@@ -1,40 +1,72 @@
-RollSomeDie can you roll a {four|Sides} sided die
-RollSomeDie can you roll a {six|Sides} sided die
-RollSomeDie can you roll a {eight|Sides} sided die
-RollSomeDie can you roll a {ten|Sides} sided die
-RollSomeDie can you roll a {twelve|Sides} sided die
-RollSomeDie can you roll a {twenty|Sides} sided die
+HelpIntent help
+HelpIntent for help
+RollSomeDie to toss a {four|Sides} sided die
+RollSomeDie toss a {four|Sides} sided die
+RollSomeDie toss a D {four|Sides}
+RollSomeDie to throw a {four|Sides} sided die
+RollSomeDie throw a {four|Sides} sided die
+RollSomeDie throw a D {four|Sides}
+RollSomeDie to roll a {four|Sides} sided die
+RollSomeDie to roll a {six|Sides} sided die
+RollSomeDie to roll a {eight|Sides} sided die
+RollSomeDie to roll a {ten|Sides} sided die
+RollSomeDie to roll a {twelve|Sides} sided die
+RollSomeDie to roll a {twenty|Sides} sided die
+RollSomeDie to roll a {one hundred|Sides} sided die
+RollSomeDie to roll an {four|Sides} sided die
+RollSomeDie to roll an {six|Sides} sided die
+RollSomeDie to roll an {eight|Sides} sided die
+RollSomeDie to roll an {ten|Sides} sided die
+RollSomeDie to roll an {twelve|Sides} sided die
+RollSomeDie to roll an {twenty|Sides} sided die
+RollSomeDie to roll an {one hundred|Sides} sided die
+RollSomeDie to roll a D {four|Sides}
+RollSomeDie to roll a D {six|Sides}
+RollSomeDie to roll a D {eight|Sides}
+RollSomeDie to roll a D {ten|Sides}
+RollSomeDie to roll a D {twelve|Sides}
+RollSomeDie to roll a D {twenty|Sides}
+RollSomeDie to roll a D {one hundred|Sides}
 RollSomeDie roll a {four|Sides} sided die
 RollSomeDie roll a {six|Sides} sided die
 RollSomeDie roll a {eight|Sides} sided die
 RollSomeDie roll a {ten|Sides} sided die
 RollSomeDie roll a {twelve|Sides} sided die
 RollSomeDie roll a {twenty|Sides} sided die
+RollSomeDie roll a {one hundred|Sides} sided die
 RollSomeDie roll an {four|Sides} sided die
 RollSomeDie roll an {six|Sides} sided die
 RollSomeDie roll an {eight|Sides} sided die
 RollSomeDie roll an {ten|Sides} sided die
 RollSomeDie roll an {twelve|Sides} sided die
 RollSomeDie roll an {twenty|Sides} sided die
+RollSomeDie roll an {one hundred|Sides} sided die
 RollSomeDie roll a D {four|Sides}
 RollSomeDie roll a D {six|Sides}
 RollSomeDie roll a D {eight|Sides}
 RollSomeDie roll a D {ten|Sides}
 RollSomeDie roll a D {twelve|Sides}
 RollSomeDie roll a D {twenty|Sides}
+RollSomeDie roll a D {one hundred|Sides}
 RollSomeDie a D {four|Sides}
 RollSomeDie a D {six|Sides}
 RollSomeDie a D {eight|Sides}
 RollSomeDie a D {ten|Sides}
 RollSomeDie a D {twelve|Sides}
 RollSomeDie a D {twenty|Sides}
+RollSomeDie a D {one hundred|Sides}
 RollSomeDie D {four|Sides}
 RollSomeDie D {six|Sides}
 RollSomeDie D {eight|Sides}
 RollSomeDie D {ten|Sides}
 RollSomeDie D {twelve|Sides}
 RollSomeDie D {twenty|Sides}
-RoleDefaultDie roll a die
-RoleDefaultDie roll die
-RoleDefaultDie roll some die
-RoleDefaultDie roll
+RollSomeDie D {one hundred|Sides}
+RollDefaultDie to roll a die
+RollDefaultDie to roll die
+RollDefaultDie to roll some die
+RollDefaultDie to roll
+RollDefaultDie roll a die
+RollDefaultDie roll die
+RollDefaultDie roll some die
+RollDefaultDie roll

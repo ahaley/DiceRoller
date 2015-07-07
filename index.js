@@ -78,10 +78,10 @@ function onIntent(intentRequest, session, callback) {
     // Dispatch to your skill's intent handlers
     if ("RollSomeDie" === intentName) {
         rollSomeDie(intent, session, callback);
-	} else if ("RoleDefaultDie" === intentName) {
+	} else if ("RollDefaultDie" === intentName) {
 		rollDefaultDie(intent, session, callback);		
     } else if ("HelpIntent" === intentName) {
-        getWelcomeResponse(callback);
+        getHelpResponse(callback);
     } else {
         throw "Invalid intent";
     }
@@ -102,7 +102,7 @@ function onSessionEnded(sessionEndedRequest, session) {
 function getWelcomeResponse(callback) {
     // If we wanted to initialize the session to have some attributes we could add those here.
     var sessionAttributes = {};
-    var cardTitle = "Welcome";
+    var cardTitle = "Welcome to Dice Roller";
     var speechOutput = "Welcome to dice roller, "
                 + "Which kind of dice would you like me to roll?";
     // If the user either does not reply to the welcome message or says something that is not
@@ -114,10 +114,21 @@ function getWelcomeResponse(callback) {
              buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
 
+function getHelpResponse(callback)
+{
+	var sessionAttributes = {};
+	var cardTitle = "Dice Roller Help";
+	var speechOutput = "You can say, \"Tell DiceRoller to Roll a D6\", Or " +
+		"leave out the D6 to automatically roll a D20.";
+
+	callback(sessionAttributes,
+		buildSpeechletResponse(cardTitle, speechOutput, "", true));
+}
+
 function roll(sides) {
-	if (sides >= 0 && sides <= 20)
-        return Math.floor(Math.random() * sides) + 1;
-	return -1;
+	if (isNaN(sides))
+		return -1;
+	return Math.floor(Math.random() * parseInt(sides)) + 1;
 }
 
 function rollSomeDie(intent, session, callback) {
@@ -130,14 +141,14 @@ function rollSomeDie(intent, session, callback) {
     
     repromptText = "Did you want me to roll the die?";
     
-	var sides = parseInt(sidesName);
-	
-    var n = roll(sides);
+    var n = roll(sidesName);
 	if (n !== -1) {
-        speechOutput = ["Your d", sidesName, "rolled a", n].join(" ");
+        speechOutput = ["Your D", sidesName, " rolled a ", n, "."].join("");
+		cardTitle = "Roll a D" + sidesName;
     }
     else {
-        speechOutput = ["I don't own a ", sidesName, "sided die."].join(" ");
+        speechOutput = ["I don't own that kind of die."].join(" ");
+		cardTitle = speechOutput;
     }
     callback(sessionAttributes,
              buildRollResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
@@ -153,7 +164,8 @@ function rollDefaultDie(intent, session, callback) {
     repromptText = "Did you want me to roll the die?";
     
     var n = roll(20);
-    speechOutput = ["Your d 20 rolled a", n].join(" ");
+    speechOutput = ["Your D20 rolled a ", n, "."].join("");
+	cardTitle = "Roll a D20";
     callback(sessionAttributes,
              buildRollResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
@@ -193,8 +205,8 @@ function buildRollResponse(title, output, repromptText, shouldEndSession) {
         },
         card: {
             type: "Simple",
-            title: "SessionSpeechlet - " + title,
-            content: "SessionSpeechlet - " + output
+            title: title,
+            content: output
         },
         shouldEndSession: shouldEndSession
     }
@@ -208,8 +220,8 @@ function buildSpeechletResponse(title, output, repromptText, shouldEndSession) {
         },
         card: {
             type: "Simple",
-            title: "SessionSpeechlet - " + title,
-            content: "SessionSpeechlet - " + output
+            title: title,
+            content: output
         },
         reprompt: {
             outputSpeech: {

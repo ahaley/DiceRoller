@@ -10,7 +10,10 @@
       ]
     },
     {
-      "intent": "RoleDefaultDie"
+      "intent": "RollDefaultDie"
+    },
+    {
+      "intent": "HelpIntent"
     }
   ]
 }
