@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "RollSomeDie",
+      "slots": [
+        {
+          "name": "Sides",
+          "type": "NUMBER"
+        }
+      ]
+    }
+  ]
+}

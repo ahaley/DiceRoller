@@ -1,0 +1,36 @@
+RollSomeDie can you roll a {four|Sides} sided die
+RollSomeDie can you roll a {six|Sides} sided die
+RollSomeDie can you roll a {eight|Sides} sided die
+RollSomeDie can you roll a {ten|Sides} sided die
+RollSomeDie can you roll a {twelve|Sides} sided die
+RollSomeDie can you roll a {twenty|Sides} sided die
+RollSomeDie roll a {four|Sides} sided die
+RollSomeDie roll a {six|Sides} sided die
+RollSomeDie roll a {eight|Sides} sided die
+RollSomeDie roll a {ten|Sides} sided die
+RollSomeDie roll a {twelve|Sides} sided die
+RollSomeDie roll a {twenty|Sides} sided die
+RollSomeDie roll an {four|Sides} sided die
+RollSomeDie roll an {six|Sides} sided die
+RollSomeDie roll an {eight|Sides} sided die
+RollSomeDie roll an {ten|Sides} sided die
+RollSomeDie roll an {twelve|Sides} sided die
+RollSomeDie roll an {twenty|Sides} sided die
+RollSomeDie roll a D {four|Sides}
+RollSomeDie roll a D {six|Sides}
+RollSomeDie roll a D {eight|Sides}
+RollSomeDie roll a D {ten|Sides}
+RollSomeDie roll a D {twelve|Sides}
+RollSomeDie roll a D {twenty|Sides}
+RollSomeDie a D {four|Sides}
+RollSomeDie a D {six|Sides}
+RollSomeDie a D {eight|Sides}
+RollSomeDie a D {ten|Sides}
+RollSomeDie a D {twelve|Sides}
+RollSomeDie a D {twenty|Sides}
+RollSomeDie D {four|Sides}
+RollSomeDie D {six|Sides}
+RollSomeDie D {eight|Sides}
+RollSomeDie D {ten|Sides}
+RollSomeDie D {twelve|Sides}
+RollSomeDie D {twenty|Sides}
