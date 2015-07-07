@@ -107,7 +107,8 @@ function getWelcomeResponse(callback) {
                 + "Which kind of dice would you like me to roll?";
     // If the user either does not reply to the welcome message or says something that is not
     // understood, they will be prompted again with this text.
-	var repromptText = "You can say, \"D6, D10 or D20\".";
+	var repromptText = "For example, you can say, \"Roll a D6\", or leave off the D6 to "
+		+ "automatically roll a D20.";
     var shouldEndSession = false;
 
     callback(sessionAttributes,
